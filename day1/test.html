@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span{width: 100px;
+             height: 100px;
+             display: block;
+             background-color: cadetblue;
+             border-radius: 50%;}
+        div.momo{
+            width: 400px;
+            height: 200px;
+            background: -webkit-linear-gradient( left top,red,blue,green);
+               /* 从左上角到右下角的颜色变换 */
+            border-radius: 50%;
+            box-shadow: 3px 3px 3px 3px #000000;
+            /* 阴影 */
+            line-height: 200px;
+            text-align: center;
+        }   
+        .mo{
+            width: 200px;
+            height: 50px;
+            border-radius: 50px;
+            /* 想要出翔胶囊提的边框 边框弧度的值用高或宽的最小值 */
+            border: #000000 1px solid;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            border: #000000 dashed 10px;
+            padding:20px;
+            box-sizing: border-box;
+            /*box-sizing: border-box; 
+            实际中占多少就是有多大 
+            box-sizing: content-box;
+            没有发生变化
+            在ie中padding margin会向内收
+            其他的会向外散
+            */
+        }
+        
+        
+        
+         </style>
+</head>
+<body>
+    <!-- <span>石家庄职业</span>
+    <span>你不知道吗？</span> -->
+    <!-- <div class="momo">软件学院</div>
+<div class="mo" >
+    我的名字
+</div> -->
+<div class="box">
+     石家庄职业技术学院
+</div>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+
+
+
+</body>
+<script>
+        var oBtns = document.getElementsByTagName('button');
+        console.log(oBtns);
+        //  for(var i = 0; i < oBtns.length ; i++){
+        //   oBtns[i].onclick = function () {
+        //        alert(this.innerHTML);
+        //   }
+          for(let i = 0; i < oBtns.length ; i++){
+             oBtns[i].onclick = function () {
+                // alert(this.innerHTML);
+                alert(i);
+          }
+}
+alert(momo());
+        // var a = b = c = d = 12;
+        // console.log(a == b);
+        // console.log(a,b,c,d);
+
+        // var x=y=z=[1,2,3,4]//引用数据类行操纵的是地址
+        // console.log(x == y);
+        // z[5]=5;
+        // console.log(z);
+        // console.log(x,y);
+        // z = [10,20,30];
+        // console.log(z,x,y);
+
+        //第二题
+        var str ='r123';
+        console.log("anunumber");
+        console.log(Number(str));//把其他的转化为数字的 不是数字 没有就是not a number
+        //空字符串 或者只有空歌 转换成数字都是 0；
+
+        
+        console.log(parseInt(str));//只要第一个字符是非数字，那么结果就是nan；
+        //如果第一个是数字那么到非数字的位置结束；
+        //第三题   不定项求和
+        function sum(a,b,c){
+            // console.log(arguments); 
+            //     arguments实参集合 下面的数字
+            var total = 0;//存储的和  复制初始值
+            for(var i=0 ;i< arguments.length; i++){//条件
+                console.log(arguments[i]);//输出单个数字
+                total -= arguments[i];//循环相加 total=total+arguments ；
+            }
+            // console.log(a,b,c);
+            //return total;
+            // 当for循环的条件不成立时，才会跳出for循环
+
+        }
+// var q = sum(2,3,4,2,4,7,5,6);
+// console.log(q);
+
+    //第四题
+            //4%5 = 0 ... 4商0余4
+            var n = 4%5;
+            if(n >= 2 && n<= 3){//并且两个条件同时满足
+                console.log('2');
+            }
+            if(n >= 2 || n<= 3 ){//或这满足一个条件
+                console.log('anyNumer');
+            }
+     //第五题
+     //不二数据类型中有5个false （0 nan null underfined “” 空字符穿），
+     //其他全是ture boolean
+
+            var a = 1 || 2;   //或者输出满足的第一个条件
+            var b = 1 && 2;   //并且连个条件都满足后输出最后的
+            //对于|| 来说前面成立写前面 前面不成立写后面{除0，nan ， ，underfined，unll}
+            console.log(a,b);
+            //==相对比较会把2变得数据类行转化成同一种再去比较 
+
+            // ===绝对比较 看连边是否是同一个数据类型，不是直接false若是则在去比较
+                        //！= 相对不等
+            //！== 绝对不等
+            //6
+            console.log('0' == 0 );
+            //！代表去反 先把要去反的数据转化为不二类型；然后再去去反
+            //！！ 代表去翻后再去翻 这个操作的效果等同于 Boolean（）转化
+            //1去反后是flash
+            //!!1 == boolean(1)效果一样
+            console.log([] == false )//[]不二就就是false == false ture
+            console.log(![] == false )//除了那五个其他的全是ture  空数组为ture
+            /*
+            基本数据类型：string unmber Boolean unll underfined   操纵的是值
+            引用数据类型：{} [] function data math 正则表达式      操纵的是地址
+            */
+           var name = '艳琪' , age = '20';
+           console.log(name +'很帅，'+'我的年龄是'+age);
+           var str = `${name}很帅，我的年龄是${age}`;//用反引号es6的模板
+           console.log(str);
+           var str2 = '234\'sdf';
+           console.log(str2);
+           Number();//转化为数字都好不能转换
+           parseInt();//强制转换
+           //强制转化失败 或者四则运算转换失败见会出现not  a unmber
+           var nan = nan //不能相等   结果是false
+           parseFloat();//浮点
+           isNaN();//判断是否是nan 是返回ture 不是返回false；
+           null == undefined;//ture
+           null === undefined;//false
+           //typeof();//查看数据类型用的  typeof typeof 1 ；返回 string;可直接去掉括号；
+           // typeof超过两个就是string
+           Number([1]);//1 数字  var  ary =[1]    ary.toString(); 出现字符串1
+           var str = {name:'my',age:20}
+           //console.log(str.name);//打点获取 另一种则是通过[]获取，属性是通过变量获取的情况
+           str[('name')];
+           for(var i = 0;i<10; i++){
+               switch(i%4){
+                   case 1:
+                   case 3:
+                     i+=1;
+                   case 0:
+                   case 2:
+                   i+=2;
+                   break;
+                   default: i+=4;
+                   //将i下去带入运算 然后++ 在判断是否小于小继续带入运算 大于结束循环
+               }
+
+           }
+           console.log(i);
+// i = 0 ; 0 < 10 ; ---> i+=2 --> 2 -->3
+// i = 3 ; 3 < 10; ---> i+=1 --> 4 -->5
+// i = 5 ; 5 < 10; ---> i+=1 --> 6 -->7
+// i = 7 ; 7 < 10; ---> i+=1 --> 8 -->9
+// i = 9 ; 9 < 10; ---> i+=1 --> 10 --> 11
+// i =11 ; 11 < 10;结束循环
+         
+var obj = {name:'zf',age:23};
+obj.name;//获取name的值  获取对象的值
+var a = 'name';
+obj[a];
+//obj.a
+//obj['a']俩着一样
+//obj[a]--->obj['name']
+for(var k in obj){
+    console.log(k);
+    console.log(obj.k);
+    console.log(obj[k]);
+}
+
+
+          
+
+
+
+
+
+
+
+
+
+
+    </script>
+</html>

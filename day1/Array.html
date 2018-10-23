@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var ary = [1,2,3,4] ;
+    ary.push(7,4);//在末尾添加77
+    var n = console.log(ary);//输出[1, 2, 3, 4, 77]
+    //n 就是改变后的数组长度 会出现 length：6
+    console.log(n,ary);
+
+   function fn(){
+return ;//两个作用1是返回值2是打断代码 直接跳出循环  如果后面再添加console.log(11);那么11将不会输出
+   }
+   var a = fn();
+   console.log(a);
+   var ary = [1,2,3,4];
+   var item = ary.pop();//删除数组的最后一向
+   console.log(item);                            //两者是删除的向
+           
+   var ary = [1,2,3,4];
+   var n = ary.unshift(12);//王数组的首增加几项
+   console.log(n);
+    ary = [200,234,123,178];
+    ary.sort(function (a,b){//sort 的返回结果是排好序之后的数组
+        return a -b;//是个升序
+        // return b -a;//是个降序
+    });//回掉函数
+    var ary = [1,2,3,4] ;
+    ary.reverse(ary);//相反的从大到小的排序
+//forEach
+ary = [10,20,30,40];
+ary.forEach(function (item,index) {
+    //用来循环数组相当于for
+// item 是循环的数组的每一项
+//index 是循环的每一项的索引
+})         //回掉函数
+var ary2 = ary.filter( function (item,index){
+  return true ;//过滤数组
+})
+console.log(ary2);
+
+//变量声明
+
+console.log(qqq);
+var qqq = 123;
+console.log(qqq);
+
+
+
+
+</script>
+</html>
